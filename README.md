@@ -6,6 +6,7 @@ Tenzies is a fun and interactive dice-rolling game built with React. The goal is
 
 - 🎲 Roll the dice until all numbers match
 - 🔄 Keep selected dice while rolling others
+- 🎉 Confetti effect on win (`react-confetti`)  
 - 🆔 Unique dice IDs with `nanoid`
 - 🎨 Clean and fun UI
 - 🏆 Game win screen
