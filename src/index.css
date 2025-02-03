@@ -35,6 +35,13 @@ main {
   margin: 0;
 }
 
+.win {
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 .instructions {
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -64,7 +71,7 @@ main {
 
 button.roll-dice {
   height: 50px;
-  width: 100px;
+  width: 150px;
   border: none;
   border-radius: 8px;
   background: #5035ff;
