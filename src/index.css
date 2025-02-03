@@ -26,7 +26,7 @@ main {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -46,4 +46,14 @@ main {
   font-size: 1.75rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+button.roll-dice {
+  height: 50px;
+  width: 100px;
+  border: none;
+  border-radius: 8px;
+  background: #5035ff;
+  color: white;
+  font-size: 1.1rem;
 }
