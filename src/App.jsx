@@ -5,7 +5,7 @@ import ReactConfetti from "react-confetti";
 import "./App.css";
 
 function App() {
-  const [dice, setDice] = useState(generateAllNewDice());
+  const [dice, setDice] = useState(() => generateAllNewDice());
 
   const gameWon =
     dice.every((die) => die.isHeld) &&
@@ -20,11 +20,15 @@ function App() {
   }
 
   function rollDice() {
-    setDice((oldDice) =>
-      oldDice.map((die) =>
-        die.isHeld ? die : { ...die, value: Math.ceil(Math.random() * 6) }
-      )
-    );
+    if (!gameWon) {
+      setDice((oldDice) =>
+        oldDice.map((die) =>
+          die.isHeld ? die : { ...die, value: Math.ceil(Math.random() * 6) }
+        )
+      );
+    } else {
+      setDice(generateAllNewDice());
+    }
   }
 
   function hold(id) {
@@ -53,12 +57,13 @@ function App() {
         Roll until all dice are the same. Click each die to freeze it at its
         current value between rolls.
       </p>
-      {gameWon && <span className="win">🎉 You won!</span>}
+
       <div className="dice-container">{diceElements}</div>
 
       <button className="roll-dice" onClick={rollDice}>
         {gameWon ? "New Game" : "Roll Dice"}
       </button>
+      {gameWon && <span className="win">🎉 You won!</span>}
     </main>
   );
 }
