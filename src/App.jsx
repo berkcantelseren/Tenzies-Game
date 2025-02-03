@@ -9,7 +9,7 @@ function App() {
   function generateAllNewDice() {
     return new Array(10).fill(0).map(() => ({
       value: Math.ceil(Math.random() * 6),
-      isHeld: false,
+      isHeld: true,
       id: nanoid(),
     }));
   }
@@ -19,7 +19,7 @@ function App() {
   }
 
   const diceElements = dice.map((dieObj) => (
-    <Die key={dieObj.id} value={dieObj.value} />
+    <Die key={dieObj.id} value={dieObj.value} isHeld={dieObj.isHeld} />
   ));
 
   return (
